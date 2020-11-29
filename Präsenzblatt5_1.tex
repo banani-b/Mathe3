@@ -46,7 +46,7 @@
 	\usetikzlibrary{shapes.misc}
 	\usetikzlibrary{fadings,decorations.pathreplacing}
 	\usetikzlibrary{cd}
-	\usepackage[arrow, matrix, curve]{xy}
+%	\usepackage[arrow, matrix, curve]{xy}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.10}
 \usepackage{subfiles}
@@ -96,6 +96,41 @@
 	f(z)=\sum_{k=0}^{\infty}a_{k}(z-z_{0})^{k}=\overline{\overline{\sum_{k=0}^{\infty}a_{k}(z-z_{0})^{k}}}=-\overline \sum_{k=0}^{\infty}a_{k}(\overline{z}-z_{0})^{k}=-\overline{f(\overline{z})}.
 	\end{equation*}
 \end{itemize}
+
+\paragraph{Aufgabe 2}
+\begin{itemize}
+	\item [a)] Entscheide, ob auf einem Gebiet, dass die Null enthält, eine holomorphe Funktion existiert, sodass 
+	\[
+	f\Big( \frac{1}{n} \Big) = (-1)^n \cdot \frac{1}{n}
+	\]
+	\textit{Lösung: } Solch eine Funktion existiert nicht. Um dies zu zeigen nutzen wir den Identitätssatz. Dieser soll zunächst in Erinnerung gerufen werden.
+	\begin{description} \textsc{Identitätssatz:} Es seien $f$ und $g$ zwei auf einem Gebiet $U$ holomorphe Funktionen, $\exists z_0 \in U \textrm{ und } z_n  \rightarrow z_0: \forall n \in \mathbb{N} \quad z_n \ne z_0$ 
+	und zusätzlich sei $f(z_n) = g(z_n) \quad \forall n \in \mathbb{N}$. 
+	
+	Dann gilt schon, dass $ f = g$ auf $U$.	
+	\end{description}
+	Sei nun $f$ wie oben beschrieben und $z_0 = 0$. 
+	
+	Wir finden zum einen eine holomorphe Funktion $g_1(z) = z$, die zusammen mit der Folge $z_n = \frac{1}{2n}$ die Bedingungen des Identitätssatzes erfüllt. Es gilt also $f(z) = z$.
+	
+	Gleichzeitig werden die Bedingungen auch mit einer Funktion $g_2(z) = -z$ für die Folge $z_n = \frac{1}{2n+1}$ erfüllt. Es gilt also auch $f(z) = -z$. Dies ist ein Widerspruch, folglich kann eine solche Funktion nicht existieren.
+	
+	\item[b )] Entscheide, ob auf einem Gebiet, dass die Null enthält eine holomorphe Funktion existiert, sodass 
+	\[
+	f\Big( \frac{1}{n} \Big) = \frac{1}{n^2 -1}.
+	\]
+	\textit{Lösung: } Solch eine Lösung existiert. Wir finden die Lösung
+	\[
+	f(z) = \frac{z^2}{1 -z^2}
+	\]
+	Diese Lösung ist holomorph in einer Umgebung der Null, denn $z^2$ und $1-z^2$ sind beide holomorph um $z = 0$ und $1 - z^2$ hat dort keine Nullstelle. Weiter gilt
+	\[
+	f \Big( \frac{1}{n} \Big) = \frac{\Big( \frac{1}{n} \Big)^2}{1 -\Big( \frac{1}{n} \Big)^2}
+	 = \frac{1}{n^2 -1}
+	\]
+	Die Funktion $f$ erfüllt also alle geforderten Eigenschaften.
+\end{itemize}
+
 
 \paragraph{Aufgabe 3}
 
