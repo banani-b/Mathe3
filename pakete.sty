@@ -1,0 +1,106 @@
+\KOMAoptions{fontsize=12pt}	% Schriftgröße
+\KOMAoptions{paper=a4}		% Blattformat
+\KOMAoptions{DIV=11}		% Breite vom Inhalt
+
+\RequirePackage[utf8]{inputenc}				% Direkte Eingabe von ä usw.
+\RequirePackage[T1]{fontenc}				% Font Kodierung für die Ausgabe
+\RequirePackage{babel}						% Verschiedenste sprach-spezifische Extras
+\RequirePackage[autostyle=true]{csquotes}	% Für das korrekte Setzen von Anführungszeichen
+\RequirePackage{amsmath}					% Liefert Mathematik-Umgebungen
+\RequirePackage{physics}					% Erweitert die Mathematichen Makros
+\RequirePackage[varg]{txfonts}				% Schönere Schriftart
+\RequirePackage{siunitx}					% Intelligentes Setzen von Zahlen und Einheiten
+\addto\extrasngerman{\sisetup{locale = DE}} % Deutsch als locale, wenn die Sprache Deutsch (ngerman) ist
+\RequirePackage{enumitem}					% Bietet erweiterte Einstellungen für Enumerates
+\RequirePackage{graphicx}					% Zum Einbinden von Abbildungen
+\RequirePackage{subcaption}					% Für subfigures (hoffentlich)
+\RequirePackage{hyperref}					% Zur Verwendung von Links in PDF Dokumenten
+\RequirePackage[all]{hypcap}				% Zur korrekten Verwendung von Refferencen
+\RequirePackage{listings}					% Zum Einbinden von Programmcode
+\RequirePackage{xcolor}						% Farben für die Listings
+\RequirePackage[backend=biber, style=numeric]{biblatex} % Zur Verwendung Literatur-Refferencen
+\RequirePackage{multirow}					% Ermöglicht übergreifende Zellen
+\RequirePackage{xfrac}						% Liefert alternative Brüche
+\RequirePackage{dsfont}						% Liefert double-struck Buchstaben
+\RequirePackage{wrapfig}					% Bilder neben dem Text einbinden
+\RequirePackage{gensymb}					% Bringt Befehle wie \degree
+\RequirePackage{caption}					% Captions anpassen
+
+%Abschnitte ohne Numerierung
+\newcommand{\addsubsec}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
+
+%Kürzel in Matheumgebungen
+\newcommand{\eps}{\varepsilon}
+\newcommand{\vect}[1]{
+	\left(\begin{array}{c}
+		#1
+	\end{array}\right)
+}
+
+%Kommentare im Text highlighten
+\newcommand{\kommentar}[1]{\textcolor{red}{#1}}
+\newcommand{\fehler}{\kommentar{Fehler!}}
+
+% Defintionen der Farben, welche in Listings verwendet werden
+\definecolor{lstBackground}{gray}{0.970}			% Grau
+\definecolor{lighterlightgray}{gray}{0.95}
+
+% Listings-Einstellungen, um deutsche Umlaute und die Tilde (~) in listings-Umgebungen verwenden zu können.
+\lstset{  
+	literate={~} {$\sim$}{1}
+	{ö}{{\"o}}1
+	{ä}{{\"a}}1
+	{ü}{{\"u}}1
+	{ß}{{\ss}}1
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+}
+
+% Einstllungen für alle Listings
+\lstset{
+	basicstyle=\ttfamily,  					% schönere Schriftart
+	showstringspaces=false,  				% Leerzeichen in Strings nicht markieren
+	backgroundcolor=\color{lstBackground},	% grauer Hintergrund
+	tabsize=4,								% 4 statt 8 leerzeichen bei tab
+	breaklines=true,						% Zeilenumbruch, falls Zeile zu lang
+	breakatwhitespace=true,					% Zeilenumbruch nur bei Leerzeichen
+	prebreak=\textbackslash,				% Backslash als markierung für Zeilenbruch
+	rulecolor=\color{black},				% keine besondere Markierung des Randes bei Zeilenbruch
+}
+
+\lstdefinestyle{python}{
+	numbers=left,
+	frame=l,
+	language=python,
+}
+
+\lstdefinestyle{customc}{
+belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	frame=l,
+	numbers = left,
+	xleftmargin=\parindent,
+	language=C,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+	belowcaptionskip=1\baselineskip,
+	frame=L,
+	xleftmargin=\parindent,
+	language=[x86masm]Assembler,
+	basicstyle=\footnotesize\ttfamily,
+	commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
+
+\lstset{
+	backgroundcolor=\color{lighterlightgray}
+}
