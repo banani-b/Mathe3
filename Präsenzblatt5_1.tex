@@ -1,0 +1,97 @@
+\documentclass[11pt,a4paper]{article}
+%\usepackage[onehalfspacing]{setspace}
+\usepackage [english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}                   
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{faktor}
+\usepackage[T1]{fontenc}
+%\usepackage{pakete}
+\usepackage{amsthm}
+\usepackage[most]{tcolorbox}
+\newcounter{testexample}
+\usepackage{xparse}
+\usepackage{bbding} % Stift
+\usepackage{varwidth}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{bbm} % Gestrichene eins
+\usepackage{bm} % Fette Symbole
+\usepackage[font=footnotesize, justification=centering]{caption}
+\usepackage{subcaption}
+\usepackage[left=3.5cm,right=3.5cm,top=3.5cm,bottom=3.5cm]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+%\rhead{ \includegraphics[scale=0.03]{unibonn.png}}
+\lhead{\textsc{Präsenzblatt 4 Lösungen}}
+\cfoot{\thepage}
+
+\setlength{\textwidth}{14cm}
+
+\usepackage{tikz}
+	\usetikzlibrary{arrows,chains,matrix,positioning,scopes}
+	\usetikzlibrary{intersections}
+ 	\usetikzlibrary{plotmarks}
+    \usetikzlibrary{angles,quotes,babel}
+    \usetikzlibrary{calc}
+	\usetikzlibrary{shapes.misc}
+	\usetikzlibrary{fadings,decorations.pathreplacing}
+	\usetikzlibrary{cd}
+	\usepackage[arrow, matrix, curve]{xy}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+\usepackage{subfiles}
+\usepackage{stmaryrd}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{imakeidx}
+\usepackage{abstract}
+\usepackage{physics}
+\usepackage[
+	colorlinks=true,
+	urlcolor=black,
+	linkcolor=blue,
+	citecolor=green
+]{hyperref}
+\newcommand{\ud}{\,\mathrm{d}}
+\renewcommand{\familydefault}{\rmdefault}
+\theoremstyle{definition} \newtheorem{theo}{Theorem}[section]
+\theoremstyle{definition} \newtheorem{defi}{Definition}[section]
+\theoremstyle{definition} \newtheorem{cor}{Corollary}[section]
+\theoremstyle{definition} \newtheorem{lemmas}{Lemma}[section]
+\theoremstyle{definition} \newtheorem{assp}{Assumption}[section]
+\theoremstyle{definition} \newtheorem{exam}{Example}[section]	
+		  \theoremstyle{definition} \newtheorem{sol}{Lösung}
+\begin{document}
+
+
+
+a) Sei $f(z)\in \mathbb{R}$ für $z\in U\cap \mathbb{R}$. Damit haben wir $z=\overline{z}\in U\cap \mathbb{R}$. Daraus sehen wir, dass $f(z)=f(\overline{z})\in \mathbb{R}$ für $z\in U\cap \mathbb{R}$ gilt. Also
+\begin{equation*}
+f(z)=\sum_{k=0}^{\infty}a_{k}(z-z_{0})^{k}=\overline{f(z)}=\sum_{k=0}^{\infty}\overline{a_{k}}(\overline{z}-\overline{z_{0}})^k=\sum_{k=0}^{\infty}\overline{a_{k}}(z-\overline{z_{0}})^k.
+\end{equation*}
+Dementsprechend muss $a_{k},z_{0}\in \mathbb{R}$ gelten. Wir sehen, dass $f(z)= \overline{f(\overline{z})}$ gilt für alle $z\in U$:
+\begin{equation*}
+f(z)=\sum_{k=0}^{\infty}a_{k}(z-z_{0})^{k}=\overline{\overline{\sum_{k=0}^{\infty}a_{k}(z-z_{0})^{k}}}=\overline{\sum_{k=0}^{\infty}a_{k}(\overline{z}-z_{0})^{k}}=\overline{f(\overline{z})}.
+\end{equation*}
+b) Folgt entweder aus i) und $-if(z)=\tilde{f}(z)$ oder genauer: für $z\in U\cap \mathbb{R}$ haben wir
+\begin{equation*}
+-\sum_{k=0}^{\infty}a_{k}(z-z_{0})^{k}=-f(z)=\overline{f(z)}=\overline{\sum_{k=0}^{\infty}a_{k}(z-z_{0})^{k}}= \sum_{k=0}^{\infty}\overline{a_{k}}(z-\overline{z_{0}})^{k},
+\end{equation*}
+also $z_{0}\in\mathbb{R}$ sowie $a_{k}\in i\mathbb{R}$. Für $z\in U$ folgt somit
+\begin{equation*}
+f(z)=\sum_{k=0}^{\infty}a_{k}(z-z_{0})^{k}=\overline{\overline{\sum_{k=0}^{\infty}a_{k}(z-z_{0})^{k}}}=-\overline \sum_{k=0}^{\infty}a_{k}(\overline{z}-z_{0})^{k}=-\overline{f(\overline{z})}.
+\end{equation*}
+\end{document}
